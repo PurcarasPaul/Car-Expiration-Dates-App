@@ -4,17 +4,23 @@
 I used Java to make the app.
 
 Languages:
+<pre>
 -English
 -Romanian
+</pre>
 
 Features:
+<pre>
 -Notifications
 -Autoload from a database
 -Service running 24/7 to check if a date is about to expire
+</pre>
 
 Others:
+<pre>
 -Almost inexistent resource consumption
 -Time complexity is O(n)
+</pre>
 
 Main Activity the first time you open the app
 
