@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">Setari</string>
+    <string name="first_fragment_label">Primul fragment</string>
+    <string name="second_fragment_label">Al doilea fragment</string>
+    <string name="next">Urmatorul</string>
+    <string name="previous">Anteriorul</string>
+    <string name="RegistrationType">Tipul inregistrarii</string>
+    <string name="Months">Luni</string>
+    <string name="Start">Inceput</string>
+    <string name="Finish">Sfarsit</string>
+    <string name="MoneySpent">Bani cheltuiti</string>
+    <string name="Delete">Sterge</string>
+    <string name="VehiclePlate">Numar de inmatriculare</string>
+    <string name="AddNewVehicle">Adauga un vehicul nou</string>
+    <string name="Title">Data de expirare pentru</string>
+    <string name="Description">Data de expirare pentru vehiculul cu placuta de inmatriculare</string>
+    <string name="Has">a</string>
+    <string name="Expired">expirat</string>
+    <string name="Day_Left">zi ramasa</string>
+    <string name="Days_Left">zile ramase</string>
+</resources>

@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name" translatable="false">Car Expiration Dates</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="RegistrationType">Registration Type</string>
+    <string name="Months">Months</string>
+    <string name="Start">Start</string>
+    <string name="Finish">Finish</string>
+    <string name="MoneySpent">Money Spent</string>
+    <string name="Delete">Delete</string>
+    <string name="VehiclePlate">Vehicle Plate</string>
+    <string name="AddNewVehicle">Add new vehicle</string>
+    <string name="Title">Expiration date for</string>
+    <string name="Description">Expiration date of the car with number plate</string>
+    <string name="Has">has</string>
+    <string name="Expired">expired</string>
+    <string name="Day_Left">day</string>
+    <string name="Days_Left">days</string>
+</resources>
