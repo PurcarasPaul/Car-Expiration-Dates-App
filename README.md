@@ -38,4 +38,4 @@ Example after pressing save
 
 Notification of an insurance that expired/is about to expire and the service that is running 24/7
 
-![](Screenshots/NoficationAndService.png)
+![](Screenshots/NotificationAndService.png)
