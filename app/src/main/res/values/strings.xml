@@ -19,6 +19,6 @@
     <string name="Description">Expiration date of the car with number plate</string>
     <string name="Has">has</string>
     <string name="Expired">expired</string>
-    <string name="Day_Left">day</string>
-    <string name="Days_Left">days</string>
+    <string name="Day_Left">day left</string>
+    <string name="Days_Left">days left</string>
 </resources>

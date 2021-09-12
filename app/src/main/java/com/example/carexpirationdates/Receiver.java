@@ -130,15 +130,15 @@ public class Receiver extends Service
             }
             else if (CarExpDate.equals(currentDate1))
             {
-                description = getString(R.string.Description) + " " + CarData.getVehicle_Plate() + " " + getString(R.string.Has) + 1 + " " + getString(R.string.Day_Left) + ".";
+                description = getString(R.string.Description) + " " + CarData.getVehicle_Plate() + " " + getString(R.string.Has) + " " + 1 + " " + getString(R.string.Day_Left) + ".";
             }
             else if (CarExpDate.equals(currentDate2))
             {
-                description = getString(R.string.Description) + " " + CarData.getVehicle_Plate() + " " + getString(R.string.Has) + 2 + " " + getString(R.string.Days_Left) + ".";
+                description = getString(R.string.Description) + " " + CarData.getVehicle_Plate() + " " + getString(R.string.Has) + " " + 2 + " " + getString(R.string.Days_Left) + ".";
             }
             else if (CarExpDate.equals(currentDate3))
             {
-                description = getString(R.string.Description) + " " + CarData.getVehicle_Plate() + " " + getString(R.string.Has) + 3 + " " + getString(R.string.Days_Left) + ".";
+                description = getString(R.string.Description) + " " + CarData.getVehicle_Plate() + " " + getString(R.string.Has) + " " + 3 + " " + getString(R.string.Days_Left) + ".";
             }
 
             if(description != null)
