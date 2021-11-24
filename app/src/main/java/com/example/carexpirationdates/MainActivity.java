@@ -5,12 +5,15 @@ import android.app.ActivityManager;
 import android.app.DatePickerDialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -19,6 +22,9 @@ import androidx.transition.ChangeBounds;
 import androidx.transition.Slide;
 import androidx.transition.Transition;
 import androidx.transition.TransitionManager;
+import androidx.work.ExistingPeriodicWorkPolicy;
+import androidx.work.PeriodicWorkRequest;
+import androidx.work.WorkManager;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -38,6 +44,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Vector;
+import java.util.concurrent.TimeUnit;
 
 import io.paperdb.Paper;
 
@@ -127,6 +134,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -147,6 +155,8 @@ public class MainActivity extends AppCompatActivity
         startService(new Intent(this, Receiver.class));
 
         ServiceInit();
+
+        new Intent().setComponent(new ComponentName("com.samsung.android.lool","com.samsung.android.sm.ui.battery.BatteryActivity"));
     }
 
     @Override
@@ -505,7 +515,6 @@ public class MainActivity extends AppCompatActivity
             }
 
             FixMoneySpent();
-            startService(new Intent(this, Receiver.class));
         }
 
         //Adds data to the database
@@ -513,8 +522,10 @@ public class MainActivity extends AppCompatActivity
         {
             Paper.book().write("CarsData",CarsData);
             Paper.book().write("MoneySpentCars",MoneySpentCars);
-        }
 
+            final PeriodicWorkRequest dailyUpdate = new PeriodicWorkRequest.Builder(BackgroundExpirationCheck.class,24,TimeUnit.HOURS).build();
+            WorkManager.getInstance(this).enqueueUniquePeriodicWork("Daily expiration check", ExistingPeriodicWorkPolicy.REPLACE,dailyUpdate);
+        }
     }
 
     //On load it will add the data from the database to table
@@ -584,6 +595,7 @@ public class MainActivity extends AppCompatActivity
         broadcastIntent.setAction("restartservice");
         broadcastIntent.setClass(this, Restarter.class);
         this.sendBroadcast(broadcastIntent);
+
         super.onDestroy();
     }
 }
